@@ -2,7 +2,7 @@
   "name": "heap",
   "version": "1.0.0",
   "author": "Jishith-dev",
-  "repo": "https://github.com/Jishith_dev/heap",
+  "repo": "https://github.com/Jishith-dev/heap",
   "description": "Min-heap collection for Zen with type-specific priority operations for int, bool, double, long, byte, and string.",
   "bin": "main.zen",
   "dependencies": {}
