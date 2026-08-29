@@ -1,0 +1,448 @@
+struct Heap {
+    List<int> ints
+    List<bool> bools
+    List<double> doubles
+    List<long> longs
+    List<byte> bytes
+    List<string> strings
+
+    pushInt(int v) void {
+        this.ints.push(v)
+
+        int i = this.ints.length - 1
+
+        while (i > 0) {
+            int parent = (i - 1) / 2
+
+            if (this.ints[parent] <= this.ints[i]) {
+                break
+            }
+
+            int temp = this.ints[parent]
+            this.ints[parent] = this.ints[i]
+            this.ints[i] = temp
+
+            i = parent
+        }
+    }
+
+    popInt() int {
+        int result = this.ints[0]
+        int last = this.ints.length - 1
+
+        if (last == 0) {
+            this.ints.removeAt(0)
+            return result
+        }
+
+        this.ints[0] = this.ints[last]
+        this.ints.removeAt(last)
+
+        int i = 0
+
+        while (true) {
+            int left = i * 2 + 1
+            int right = i * 2 + 2
+            int smallest = i
+
+            if (left < this.ints.length && this.ints[left] < this.ints[smallest]) {
+                smallest = left
+            }
+
+            if (right < this.ints.length && this.ints[right] < this.ints[smallest]) {
+                smallest = right
+            }
+
+            if (smallest == i) {
+                break
+            }
+
+            int temp = this.ints[i]
+            this.ints[i] = this.ints[smallest]
+            this.ints[smallest] = temp
+
+            i = smallest
+        }
+
+        return result
+    }
+
+    peekInt() int {
+        return this.ints[0]
+    }
+
+    sizeInt() int {
+        return this.ints.length
+    }
+
+    isEmptyInt() bool {
+        return this.ints.length == 0
+    }
+
+    pushBool(bool v) void {
+        this.bools.push(v)
+
+        int i = this.bools.length - 1
+
+        while (i > 0) {
+            int parent = (i - 1) / 2
+
+            if (this.bools[parent] <= this.bools[i]) {
+                break
+            }
+
+            bool temp = this.bools[parent]
+            this.bools[parent] = this.bools[i]
+            this.bools[i] = temp
+
+            i = parent
+        }
+    }
+
+    popBool() bool {
+        bool result = this.bools[0]
+        int last = this.bools.length - 1
+
+        if (last == 0) {
+            this.bools.removeAt(0)
+            return result
+        }
+
+        this.bools[0] = this.bools[last]
+        this.bools.removeAt(last)
+
+        int i = 0
+
+        while (true) {
+            int left = i * 2 + 1
+            int right = i * 2 + 2
+            int smallest = i
+
+            if (left < this.bools.length && this.bools[left] < this.bools[smallest]) {
+                smallest = left
+            }
+
+            if (right < this.bools.length && this.bools[right] < this.bools[smallest]) {
+                smallest = right
+            }
+
+            if (smallest == i) {
+                break
+            }
+
+            bool temp = this.bools[i]
+            this.bools[i] = this.bools[smallest]
+            this.bools[smallest] = temp
+
+            i = smallest
+        }
+
+        return result
+    }
+
+    peekBool() bool {
+        return this.bools[0]
+    }
+
+    sizeBool() int {
+        return this.bools.length
+    }
+
+    isEmptyBool() bool {
+        return this.bools.length == 0
+    }
+
+    pushDouble(double v) void {
+        this.doubles.push(v)
+
+        int i = this.doubles.length - 1
+
+        while (i > 0) {
+            int parent = (i - 1) / 2
+
+            if (this.doubles[parent] <= this.doubles[i]) {
+                break
+            }
+
+            double temp = this.doubles[parent]
+            this.doubles[parent] = this.doubles[i]
+            this.doubles[i] = temp
+
+            i = parent
+        }
+    }
+
+    popDouble() double {
+        double result = this.doubles[0]
+        int last = this.doubles.length - 1
+
+        if (last == 0) {
+            this.doubles.removeAt(0)
+            return result
+        }
+
+        this.doubles[0] = this.doubles[last]
+        this.doubles.removeAt(last)
+
+        int i = 0
+
+        while (true) {
+            int left = i * 2 + 1
+            int right = i * 2 + 2
+            int smallest = i
+
+            if (left < this.doubles.length && this.doubles[left] < this.doubles[smallest]) {
+                smallest = left
+            }
+
+            if (right < this.doubles.length && this.doubles[right] < this.doubles[smallest]) {
+                smallest = right
+            }
+
+            if (smallest == i) {
+                break
+            }
+
+            double temp = this.doubles[i]
+            this.doubles[i] = this.doubles[smallest]
+            this.doubles[smallest] = temp
+
+            i = smallest
+        }
+
+        return result
+    }
+
+    peekDouble() double {
+        return this.doubles[0]
+    }
+
+    sizeDouble() int {
+        return this.doubles.length
+    }
+
+    isEmptyDouble() bool {
+        return this.doubles.length == 0
+    }
+
+    pushLong(long v) void {
+        this.longs.push(v)
+
+        int i = this.longs.length - 1
+
+        while (i > 0) {
+            int parent = (i - 1) / 2
+
+            if (this.longs[parent] <= this.longs[i]) {
+                break
+            }
+
+            long temp = this.longs[parent]
+            this.longs[parent] = this.longs[i]
+            this.longs[i] = temp
+
+            i = parent
+        }
+    }
+
+    popLong() long {
+        long result = this.longs[0]
+        int last = this.longs.length - 1
+
+        if (last == 0) {
+            this.longs.removeAt(0)
+            return result
+        }
+
+        this.longs[0] = this.longs[last]
+        this.longs.removeAt(last)
+
+        int i = 0
+
+        while (true) {
+            int left = i * 2 + 1
+            int right = i * 2 + 2
+            int smallest = i
+
+            if (left < this.longs.length && this.longs[left] < this.longs[smallest]) {
+                smallest = left
+            }
+
+            if (right < this.longs.length && this.longs[right] < this.longs[smallest]) {
+                smallest = right
+            }
+
+            if (smallest == i) {
+                break
+            }
+
+            long temp = this.longs[i]
+            this.longs[i] = this.longs[smallest]
+            this.longs[smallest] = temp
+
+            i = smallest
+        }
+
+        return result
+    }
+
+    peekLong() long {
+        return this.longs[0]
+    }
+
+    sizeLong() int {
+        return this.longs.length
+    }
+
+    isEmptyLong() bool {
+        return this.longs.length == 0
+    }
+
+    pushByte(byte v) void {
+        this.bytes.push(v)
+
+        int i = this.bytes.length - 1
+
+        while (i > 0) {
+            int parent = (i - 1) / 2
+
+            if (this.bytes[parent] <= this.bytes[i]) {
+                break
+            }
+
+            byte temp = this.bytes[parent]
+            this.bytes[parent] = this.bytes[i]
+            this.bytes[i] = temp
+
+            i = parent
+        }
+    }
+
+    popByte() byte {
+        byte result = this.bytes[0]
+        int last = this.bytes.length - 1
+
+        if (last == 0) {
+            this.bytes.removeAt(0)
+            return result
+        }
+
+        this.bytes[0] = this.bytes[last]
+        this.bytes.removeAt(last)
+
+        int i = 0
+
+        while (true) {
+            int left = i * 2 + 1
+            int right = i * 2 + 2
+            int smallest = i
+
+            if (left < this.bytes.length && this.bytes[left] < this.bytes[smallest]) {
+                smallest = left
+            }
+
+            if (right < this.bytes.length && this.bytes[right] < this.bytes[smallest]) {
+                smallest = right
+            }
+
+            if (smallest == i) {
+                break
+            }
+
+            byte temp = this.bytes[i]
+            this.bytes[i] = this.bytes[smallest]
+            this.bytes[smallest] = temp
+
+            i = smallest
+        }
+
+        return result
+    }
+
+    peekByte() byte {
+        return this.bytes[0]
+    }
+
+    sizeByte() int {
+        return this.bytes.length
+    }
+
+    isEmptyByte() bool {
+        return this.bytes.length == 0
+    }
+
+    pushString(string v) void {
+        this.strings.push(v)
+
+        int i = this.strings.length - 1
+
+        while (i > 0) {
+            int parent = (i - 1) / 2
+
+            if (this.strings[parent] <= this.strings[i]) {
+                break
+            }
+
+            string temp = this.strings[parent]
+            this.strings[parent] = this.strings[i]
+            this.strings[i] = temp
+
+            i = parent
+        }
+    }
+
+    popString() string {
+        string result = this.strings[0]
+        int last = this.strings.length - 1
+
+        if (last == 0) {
+            this.strings.removeAt(0)
+            return result
+        }
+
+        this.strings[0] = this.strings[last]
+        this.strings.removeAt(last)
+
+        int i = 0
+
+        while (true) {
+            int left = i * 2 + 1
+            int right = i * 2 + 2
+            int smallest = i
+
+            if (left < this.strings.length && this.strings[left] < this.strings[smallest]) {
+                smallest = left
+            }
+
+            if (right < this.strings.length && this.strings[right] < this.strings[smallest]) {
+                smallest = right
+            }
+
+            if (smallest == i) {
+                break
+            }
+
+            string temp = this.strings[i]
+            this.strings[i] = this.strings[smallest]
+            this.strings[smallest] = temp
+
+            i = smallest
+        }
+
+        return result
+    }
+
+    peekString() string {
+        return this.strings[0]
+    }
+
+    sizeString() int {
+        return this.strings.length
+    }
+
+    isEmptyString() bool {
+        return this.strings.length == 0
+    }
+}
+
+export (Heap)
