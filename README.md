@@ -1,5 +1,7 @@
 # Heap
 
+author: Jishith M P
+
 A type-specific **min-heap** collection for Zen.
 
 A min-heap always keeps the smallest value at the top, allowing the minimum value to be retrieved and removed efficiently.

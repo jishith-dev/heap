@@ -1,10 +1,11 @@
 struct Heap {
-    List<int> ints
-    List<bool> bools
-    List<double> doubles
-    List<long> longs
-    List<byte> bytes
-    List<string> strings
+  
+    private List<int> ints = []
+    private List<bool> bools = []
+    private List<double> doubles = []
+    private List<long> longs = []
+    private List<byte> bytes = []
+    private List<string> strings = []
 
     pushInt(int v) void {
         this.ints.push(v)
